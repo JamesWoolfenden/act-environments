@@ -4,6 +4,8 @@ This repo contains Packer scripts to create docker images necessary to run GitHu
 # Building Images
 Run:
 
+```shell
+packer build images/linux/ubuntu1804.json
 ```
-packer build -var github_feed_token=XXXXXXXXX images/linux/ubuntu1804.json
-```
+
+Reads The environmental variable GITHUB_TOKEN.
