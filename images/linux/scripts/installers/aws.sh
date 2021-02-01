@@ -7,12 +7,11 @@
 # Source the helpers
 source $HELPER_SCRIPTS/document.sh
 
-# Install the AWS CLI
-curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-unzip awscli-bundle.zip
-./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-rm awscli-bundle.zip
-rm -rf awscli-bundle
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+rm -rf awscliv2.zip
 
 # Validate the installation
 echo "Validate the installation"

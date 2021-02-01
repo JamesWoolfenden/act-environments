@@ -1,3 +1,6 @@
 
 ubuntu1804:
-	packer build -var github_feed_token=$$(cat ~/.config/github/token) images/linux/ubuntu1804.json
+	packer build images/linux/ubuntu1804.json
+
+ubuntu2004:
+	packer build images/linux/ubuntu2004.json
