@@ -16,13 +16,8 @@ set -e
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
 apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main"
 apt-get -q update
-apt-get -y install zulu-7-azure-jdk=\*
-apt-get -y install zulu-8-azure-jdk=\*
 apt-get -y install zulu-11-azure-jdk=\*
 apt-get -y install zulu-12-azure-jdk=\*
-update-java-alternatives -s /usr/lib/jvm/zulu-8-azure-amd64
-echo "JAVA_HOME_7_X64=/usr/lib/jvm/zulu-7-azure-amd64" | tee -a /etc/environment
-echo "JAVA_HOME_8_X64=/usr/lib/jvm/zulu-8-azure-amd64" | tee -a /etc/environment
 echo "JAVA_HOME_11_X64=/usr/lib/jvm/zulu-11-azure-amd64" | tee -a /etc/environment
 echo "JAVA_HOME_12_X64=/usr/lib/jvm/zulu-12-azure-amd64" | tee -a /etc/environment
 echo "JAVA_HOME=/usr/lib/jvm/zulu-${DEFAULT_JDK_VERSION}-azure-amd64" | tee -a /etc/environment
@@ -68,8 +63,6 @@ done
 
 # Document what was added to the image
 echo "Lastly, documenting what we added to the metadata file"
-DocumentInstalledItem "Azul Zulu OpenJDK (7) ($(/usr/lib/jvm/zulu-7-azure-amd64/bin/java -showversion |& head -n 1))"
-DocumentInstalledItem "Azul Zulu OpenJDK (8) ($(/usr/lib/jvm/zulu-8-azure-amd64/bin/java -showversion |& head -n 1))"
 DocumentInstalledItem "Azul Zulu OpenJDK (11) ($(/usr/lib/jvm/zulu-11-azure-amd64/bin/java -showversion |& head -n 1))"
 DocumentInstalledItem "Azul Zulu OpenJDK (12) ($(/usr/lib/jvm/zulu-12-azure-amd64/bin/java -showversion |& head -n 1))"
 DocumentInstalledItem "Ant ($(ant -version))"

@@ -163,7 +163,6 @@ the
 - cbindgen (0.12.2)
 - sbt (1.3.7)
 - Sphinx Open Source Search Server
-- Subversion (svn, version 1.9.3 (r1718519))
 - Terraform (Terraform v0.12.19)
 - Vcpkg 2020.01.17-unknownhash
 - Zeit Now CLI (16.7.3)
